@@ -219,9 +219,9 @@ async def verify(ctx):
         user_prev_verify = get_user_guild(ctx.guild.id, ctx.author.id)
         if user_prev_verify == None:
             new_user(ctx.author.id, ctx.guild.id)
-            await ctx.author.send(verify_msg(ctx.guild, DOMAIN_NAME))
+            await ctx.author.send(verify_msg(ctx.guild))
         elif user_prev_verify[4] == 0:
-            await ctx.author.send(verify_msg(ctx.guild, DOMAIN_NAME))
+            await ctx.author.send(verify_msg(ctx.guild))
 
 keep_alive()
 client.run(os.environ.get('DISCORD_TOKEN'))
